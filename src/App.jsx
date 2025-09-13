@@ -5,32 +5,44 @@ import Experience from './pages/Experience'
 import Projects from './pages/Projects'
 import Education from './pages/Education'
 import Contact from './pages/Contact'
+import Services from './pages/Services'
+import Achievements from './pages/Achievements'
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <nav className="bg-blue-600 text-white p-4 flex justify-between">
-        <h1 className="font-bold">Poula Youssef</h1>
-        <div className="space-x-4">
-          <Link to="/">Home</Link>
-          <Link to="/skills">Skills</Link>
-          <Link to="/experience">Experience</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/education">Education</Link>
-          <Link to="/contact">Contact</Link>
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      {/* Navigation Bar */}
+      <nav className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 shadow-md">
+        <div className="container mx-auto flex justify-center space-x-6 text-lg font-semibold">
+          <Link className="hover:text-yellow-300 transition-colors" to="/">Home</Link>
+          <Link className="hover:text-yellow-300 transition-colors" to="/about">About</Link>
+          <Link className="hover:text-yellow-300 transition-colors" to="/education">Education</Link>
+          <Link className="hover:text-yellow-300 transition-colors" to="/experience">Experience</Link>
+          <Link className="hover:text-yellow-300 transition-colors" to="/projects">Projects</Link>
+          <Link className="hover:text-yellow-300 transition-colors" to="/skills">Skills</Link>
+          <Link className="hover:text-yellow-300 transition-colors" to="/achievements">Achievements</Link>
+          <Link className="hover:text-yellow-300 transition-colors" to="/services">Services</Link>
+          <Link className="hover:text-yellow-300 transition-colors" to="/contact">Contact</Link>
         </div>
       </nav>
-      <main className="flex-grow p-6">
+
+      {/* Main Content */}
+      <main className="flex-grow p-8 container mx-auto">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/skills" element={<Skills />} />
+          <Route path="/about" element={<Home />} />
+          <Route path="/education" element={<Education />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/education" element={<Education />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/achievements" element={<Achievements />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      <footer className="bg-gray-800 text-white text-center p-4">
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white text-center p-4 mt-6 shadow-inner">
         © {new Date().getFullYear()} Poula Youssef
       </footer>
     </div>
